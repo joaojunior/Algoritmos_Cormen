@@ -1,0 +1,2 @@
+Implementação simples de Fila, onde cada elemento da fila é do tipo Cell.
+Para rodar os testes execute make run_tests
