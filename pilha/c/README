@@ -1,0 +1,2 @@
+Implementação simples de Pilha, onde cada elemento da pilha é do tipo Element.
+Para rodar os testes execute make run_tests
