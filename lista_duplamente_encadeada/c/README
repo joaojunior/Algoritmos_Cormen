@@ -1,0 +1,2 @@
+Implementação simples de Lista duplamente encadeada, onde cada elemento da lista duplamente encadeada é do tipo Cell.
+Para rodar os testes execute make run_tests
