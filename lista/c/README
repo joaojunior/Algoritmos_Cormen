@@ -1,0 +1,2 @@
+Implementação simples de Lista, onde cada elemento da lista é do tipo Cell.
+Para rodar os testes execute make run_tests
