@@ -29,3 +29,14 @@ Cell *remove(Cell *sentinel, int id){
     }
     return result;
 };
+
+Cell *search(Cell *sentinel, int id){
+    Cell *result=NULL;
+    result = sentinel;
+    while(result->id != id and result->next != sentinel){
+        result = result->next;
+    }
+    if(result->id != id)
+        result = NULL;
+    return result;
+};

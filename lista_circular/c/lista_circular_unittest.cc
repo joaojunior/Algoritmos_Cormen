@@ -109,6 +109,32 @@ TEST(ListTest, Remove_no_id_no_exist_list_with_three_elements){
     ASSERT_EQ(&cell1, list.next->next->next->next->next);
 };
 
+TEST(ListTest, search_id_3_list_with_three_elements){
+    Cell list;
+    Cell cell1, cell2, cell3, *result;
+    cell1.id = 1;
+    cell2.id = 2;
+    cell3.id = 3;
+    insert(&list, &cell3);
+    insert(&list, &cell2);
+    insert(&list, &cell1);
+    result = search(&list, cell3.id);
+    ASSERT_EQ(3, result->id);
+};
+
+TEST(ListTest, search_id_no_exist_list_with_three_elements){
+    Cell list;
+    Cell cell1, cell2, cell3, *result;
+    cell1.id = 1;
+    cell2.id = 2;
+    cell3.id = 3;
+    insert(&list, &cell3);
+    insert(&list, &cell2);
+    insert(&list, &cell1);
+    result = search(&list, 4);
+    ASSERT_EQ(NULL, result);
+};
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
