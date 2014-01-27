@@ -8,5 +8,6 @@ typedef struct cell{
 
 bool empty(Cell *);
 void insert(Cell *, Cell *);
+Cell *remove(Cell *, int);
 
 #endif
