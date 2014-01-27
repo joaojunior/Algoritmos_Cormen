@@ -1,0 +1,3 @@
+Implementação simples de Lista Circular, onde cada elemento da lista é do tipo Cell. O último elemento é um elemento sentinela do tipo Cell
+que aponta para o primeiro elemento da lista. Todas as inserções são feitas no início da lista.
+Para rodar os testes execute make run_tests
