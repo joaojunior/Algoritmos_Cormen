@@ -1,0 +1,4 @@
+Implementação simples de Grafo por uma lista de adjacência. Seja G=(V,E), onde V é o conjunto de vértices e E é o conjunto de arcos do grafo
+considerado G, então cada nó é identificado por uma número de 0 até |V| - 1. O Novo tipo Graph possui um vetor de |V| elementos, onde cada
+posição desse vetor é um ponteiro para a lista de arestas que possuem o nó de origem igual a posição considerada.
+Para rodar os testes execute make run_tests
