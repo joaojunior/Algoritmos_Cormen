@@ -18,6 +18,11 @@ void insert_edge(Graph *graph, int source, int dest, int weight){
     graph->edges[dest][source] = weight;
 };
 
+void insert_arc(Graph *graph, int source, int dest, int weight){
+    graph->numbers_edges += 1;
+    graph->edges[source][dest] = weight;
+};
+
 int get_cost_edge(Graph *graph, int source, int dest){
     return graph->edges[source][dest];
 };

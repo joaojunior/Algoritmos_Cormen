@@ -12,5 +12,6 @@ typedef struct graph{
 bool empty(Graph *);
 void allocate_memory(Graph *);
 void insert_edge(Graph *, int, int, int);
+void insert_arc(Graph *, int, int, int);
 int get_cost_edge(Graph *, int, int);
 #endif
