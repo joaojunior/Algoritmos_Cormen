@@ -1,0 +1,4 @@
+Implementação simples de Grafo por uma matriz de adjacência. Seja G=(V,E), onde V é o conjunto de vértices e E é o conjunto de arcos do grafo
+considerado G, então cada nó é identificado por uma número de 0 até |V| - 1. O Novo tipo Graph possui uma matriz de |V| ^ 2 elementos, onde 
+cada aresta é identificada por um par de indices i, j.
+Para rodar os testes execute make run_tests
