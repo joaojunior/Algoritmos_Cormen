@@ -12,5 +12,5 @@ typedef struct{
 } Queue;
 bool empty(Queue *);
 void enqueue(Queue *, int);
-Cell *dequeue(Queue *);
+int dequeue(Queue *);
 #endif

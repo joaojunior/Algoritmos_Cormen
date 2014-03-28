@@ -20,14 +20,17 @@ void enqueue(Queue *queue, int id){
     };
 };
 
-Cell *dequeue(Queue *queue){
+int dequeue(Queue *queue){
     Cell *result;
     result = queue->first;
+    int id_result = -1;
     if(queue->first == queue->last){
         queue->first = NULL;
         queue->last = NULL;
     } else{
         queue->first = queue->first->prox;
     };
-    return result;
+    if(result)
+        id_result = result->id;
+    return id_result;
 };
