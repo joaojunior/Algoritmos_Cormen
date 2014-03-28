@@ -1,0 +1,2 @@
+Implementação do algoritmo de Breadth first search. Esse algoritmo utiliza as estruturas de dados Graph e Fila.
+Para rodar os testes execute make run_tests
