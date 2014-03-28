@@ -6,7 +6,11 @@ bool empty(Queue *queue){
     return result;
 };
 
-void enqueue(Queue *queue, Cell *cell){
+void enqueue(Queue *queue, int id){
+    Cell *cell;
+    cell = (Cell *)malloc(sizeof(Cell));
+    cell->id = id;
+    cell->prox = NULL;
     if(empty(queue)){
         queue->first = cell;
         queue->last = cell;

@@ -1,4 +1,5 @@
 #include <stddef.h>
+#include <stdlib.h>
 #ifndef FILA_H
 #define FILA_H
 typedef struct cell{
@@ -10,6 +11,6 @@ typedef struct{
     Cell *last=NULL;
 } Queue;
 bool empty(Queue *);
-void enqueue(Queue *, Cell *);
+void enqueue(Queue *, int);
 Cell *dequeue(Queue *);
 #endif
