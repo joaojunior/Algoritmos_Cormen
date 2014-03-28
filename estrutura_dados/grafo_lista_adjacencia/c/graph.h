@@ -5,7 +5,7 @@
 
 typedef struct edge{
     int dest;
-    float weight = 1;
+    float weight = 0;
 } Edge;
 
 typedef struct cell{
@@ -23,7 +23,7 @@ typedef struct graph{
 } Graph;
 
 bool empty(Graph *);
-void insert_edge(Graph *, int, int);
+void insert_edge(Graph *, int, int, int);
 Edge *get_edge(Graph *, int, int);
 
 #endif

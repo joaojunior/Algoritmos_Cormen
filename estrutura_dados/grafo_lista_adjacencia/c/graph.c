@@ -6,13 +6,13 @@ bool empty(Graph *graph){
     return result;
 };
 
-void insert_edge(Graph *graph, int source, int dest){
+void insert_edge(Graph *graph, int source, int dest, int weight){
     Edge *new_edge;
     Cell *last_cell, *new_cell;
     new_edge = (Edge *) malloc(sizeof *new_edge);
     new_cell = (Cell *) malloc(sizeof *new_cell);
     new_edge->dest = dest;
-    new_edge->weight = 1;
+    new_edge->weight = weight;
     new_cell->edge = *new_edge;
     new_cell->next = NULL;
     if(graph->list_adj_node[source].first == NULL)

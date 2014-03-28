@@ -19,7 +19,7 @@ TEST(GraphTest, GraphInsertEdge){
     Edge expect, *result;
     expect.dest = 1;
     graph.list_adj_node = list_adj;
-    insert_edge(&graph, 0, 1);
+    insert_edge(&graph, 0, 1, 1);
     result = get_edge(&graph, 0, 1);
     ASSERT_EQ(expect.dest, result->dest);
 }
@@ -29,8 +29,8 @@ TEST(GraphTest, GraphInsertTwoEdgeWithSameNodeSource){
     ListAdj list_adj[3];
     Edge *result1, *result2;
     graph.list_adj_node = list_adj;
-    insert_edge(&graph, 0, 1);
-    insert_edge(&graph, 0, 2);
+    insert_edge(&graph, 0, 1, 1);
+    insert_edge(&graph, 0, 2, 1);
     result1 = get_edge(&graph, 0, 1);
     result2 = get_edge(&graph, 0, 2);
     ASSERT_EQ(1, result1->dest);
@@ -42,8 +42,8 @@ TEST(GraphTest, GraphInsertTwoEdgeWithDifferentNodeSource){
     ListAdj list_adj[3];
     Edge *result1, *result2;
     graph.list_adj_node = list_adj;
-    insert_edge(&graph, 0, 1);
-    insert_edge(&graph, 1, 2);
+    insert_edge(&graph, 0, 1, 1);
+    insert_edge(&graph, 1, 2, 1);
     result1 = get_edge(&graph, 0, 1);
     result2 = get_edge(&graph, 1, 2);
     ASSERT_EQ(1, result1->dest);
