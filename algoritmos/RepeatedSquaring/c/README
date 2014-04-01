@@ -1,0 +1,3 @@
+Implementação do algoritmo de Faster-All-Pairs-Shortest-Paths. Esse algoritmo utiliza a estrutura de dados Graph. As variáveis foram
+mantidas com os nomes dados no livro do Cormen.
+Para rodar os testes execute make run_tests
