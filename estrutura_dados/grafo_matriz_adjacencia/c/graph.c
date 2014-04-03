@@ -8,7 +8,10 @@ void allocate_memory(Graph *graph){
     for(int i = 0; i < graph->numbers_nodes; i++){
         graph->edges[i] = (int *)malloc(graph->numbers_nodes * sizeof(int));
         for(int j = 0; j < graph->numbers_nodes; j++)
-            graph->edges[i][j] = WEIGHT2EMPTY;
+            if(i == j)
+                graph->edges[i][j] = EMPTY_WEIGHT;
+            else
+                graph->edges[i][j] = MAX_WEIGHT;
     }
 };
 

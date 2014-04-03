@@ -35,8 +35,8 @@ TEST(GraphTest, GetCostEdgeNotExist){
     Graph graph;
     graph.numbers_nodes = 2;
     allocate_memory(&graph);
-    ASSERT_EQ(WEIGHT2EMPTY, get_cost_edge(&graph, 0, 1));
-    ASSERT_EQ(WEIGHT2EMPTY, get_cost_edge(&graph, 1, 0));
+    ASSERT_EQ(MAX_WEIGHT, get_cost_edge(&graph, 0, 1));
+    ASSERT_EQ(MAX_WEIGHT, get_cost_edge(&graph, 1, 0));
 }
 
 TEST(GraphTest, GetCostArc){
@@ -45,7 +45,15 @@ TEST(GraphTest, GetCostArc){
     allocate_memory(&graph);
     insert_arc(&graph, 0, 1, 10);
     ASSERT_EQ(10, get_cost_edge(&graph, 0, 1));
-    ASSERT_EQ(0, get_cost_edge(&graph, 1, 0));
+    ASSERT_EQ(MAX_WEIGHT, get_cost_edge(&graph, 1, 0));
+}
+
+TEST(GraphTest, GraphInitialNotContentSelfLoops){
+    Graph graph;
+    graph.numbers_nodes = 2;
+    allocate_memory(&graph);
+    ASSERT_EQ(EMPTY_WEIGHT, get_cost_edge(&graph, 0, 0));
+    ASSERT_EQ(EMPTY_WEIGHT, get_cost_edge(&graph, 1, 1));
 }
 
 int main(int argc, char **argv) {

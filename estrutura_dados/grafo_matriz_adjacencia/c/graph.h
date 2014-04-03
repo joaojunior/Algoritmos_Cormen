@@ -1,8 +1,10 @@
 #include <stddef.h>
 #include <stdlib.h>
+#include <limits.h>
 #ifndef GRAPH_H
 #define GRAPH_H
-#define WEIGHT2EMPTY 0
+#define EMPTY_WEIGHT 0
+#define MAX_WEIGHT INT_MAX
 typedef struct graph{
     int numbers_nodes = 0;
     int numbers_edges = 0;
