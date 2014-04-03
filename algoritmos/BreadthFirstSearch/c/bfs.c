@@ -4,7 +4,6 @@ BFSResult *bfs(Graph *graph, int source){
     int *colors;
     Queue nodes;
     int node_id;
-    int cost_edge;
     enqueue(&nodes, source);
     bfs_result = (BFSResult *)malloc(sizeof(BFSResult));
     bfs_result->distance = (int *)malloc(graph->numbers_nodes * sizeof(int));
@@ -19,8 +18,7 @@ BFSResult *bfs(Graph *graph, int source){
     while(!empty(&nodes)){
         node_id = dequeue(&nodes);
         for(int i = 0; i < graph->numbers_nodes; i++){
-            cost_edge = get_cost_edge(graph, node_id, i);
-            if(cost_edge > 0 and colors[i] == WHITE){
+            if(exist_arc(graph, node_id, i) and colors[i] == WHITE){
                 enqueue(&nodes, i);
                 bfs_result->distance[i] = bfs_result->distance[node_id] + 1;
                 colors[i] = GRAY;
