@@ -3,7 +3,7 @@
 #include <limits.h>
 #ifndef GRAPH_H
 #define GRAPH_H
-#define MAX_WEIGHT INT_MAX
+#define MAX_WEIGHT INT_MAX / 2
 typedef struct graph{
     int numbers_nodes = 0;
     int numbers_edges = 0;
