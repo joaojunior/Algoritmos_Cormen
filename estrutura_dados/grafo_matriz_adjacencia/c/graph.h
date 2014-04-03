@@ -3,7 +3,6 @@
 #include <limits.h>
 #ifndef GRAPH_H
 #define GRAPH_H
-#define EMPTY_WEIGHT 0
 #define MAX_WEIGHT INT_MAX
 typedef struct graph{
     int numbers_nodes = 0;
@@ -16,4 +15,5 @@ void allocate_memory(Graph *);
 void insert_edge(Graph *, int, int, int);
 void insert_arc(Graph *, int, int, int);
 int get_cost_edge(Graph *, int, int);
+bool exist_arc(Graph *, int, int);
 #endif

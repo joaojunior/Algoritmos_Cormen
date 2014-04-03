@@ -52,8 +52,19 @@ TEST(GraphTest, GraphInitialNotContentSelfLoops){
     Graph graph;
     graph.numbers_nodes = 2;
     allocate_memory(&graph);
-    ASSERT_EQ(EMPTY_WEIGHT, get_cost_edge(&graph, 0, 0));
-    ASSERT_EQ(EMPTY_WEIGHT, get_cost_edge(&graph, 1, 1));
+    ASSERT_EQ(MAX_WEIGHT, get_cost_edge(&graph, 0, 0));
+    ASSERT_EQ(MAX_WEIGHT, get_cost_edge(&graph, 1, 1));
+}
+
+TEST(GraphTest, ExistArc){
+    Graph graph;
+    graph.numbers_nodes = 2;
+    allocate_memory(&graph);
+    insert_arc(&graph, 1, 0, 10);
+    ASSERT_FALSE(exist_arc(&graph, 0, 0));
+    ASSERT_FALSE(exist_arc(&graph, 1, 1));
+    ASSERT_FALSE(exist_arc(&graph, 0, 1));
+    ASSERT_TRUE(exist_arc(&graph, 1, 0));
 }
 
 int main(int argc, char **argv) {

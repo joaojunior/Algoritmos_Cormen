@@ -8,9 +8,6 @@ void allocate_memory(Graph *graph){
     for(int i = 0; i < graph->numbers_nodes; i++){
         graph->edges[i] = (int *)malloc(graph->numbers_nodes * sizeof(int));
         for(int j = 0; j < graph->numbers_nodes; j++)
-            if(i == j)
-                graph->edges[i][j] = EMPTY_WEIGHT;
-            else
                 graph->edges[i][j] = MAX_WEIGHT;
     }
 };
@@ -28,4 +25,11 @@ void insert_arc(Graph *graph, int source, int dest, int weight){
 
 int get_cost_edge(Graph *graph, int source, int dest){
     return graph->edges[source][dest];
+};
+
+bool exist_arc(Graph *graph, int source, int dest){
+    bool result = false;
+    if(get_cost_edge(graph, source, dest) != MAX_WEIGHT)
+        result = true;
+    return result;
 };
