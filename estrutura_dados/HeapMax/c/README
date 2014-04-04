@@ -1,0 +1,2 @@
+Implementação de HeapMax através de um vetor.
+Para rodar os testes execute make run_tests
