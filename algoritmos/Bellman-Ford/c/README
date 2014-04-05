@@ -1,0 +1,2 @@
+Implementação do algoritmo de BellmanFord. Esse algoritmo utiliza a estrutura de dados Graph.
+Para rodar os testes execute make run_tests
