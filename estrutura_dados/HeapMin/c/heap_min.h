@@ -18,7 +18,10 @@ void min_heapify(HeapMin *, int);
 void swap(HeapMin *, int, int);
 void build_min_heap(HeapMin *);
 void decrement_lenght(HeapMin *);
+void set_value_and_key_i(HeapMin *, int, int, int);
+void set_value_i(HeapMin *, int, int);
 void set_key_i(HeapMin *, int, int);
 int get_key_i(HeapMin *, int);
+int get_value_i(HeapMin *, int);
 #endif
 

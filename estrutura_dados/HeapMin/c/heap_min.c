@@ -55,10 +55,23 @@ void decrement_lenght(HeapMin *heap_min){
     heap_min->values[0].value -= 1;
 };
 
-void set_key_i(HeapMin *heap_min, int i, int value){
+void set_value_and_key_i(HeapMin *heap_min, int i, int value, int key){
+    set_value_i(heap_min, i, value);
+    set_key_i(heap_min, i, key);
+};
+
+void set_value_i(HeapMin *heap_min, int i, int value){
     heap_min->values[i].value = value;
 };
 
+void set_key_i(HeapMin *heap_min, int i, int key){
+    heap_min->values[i].key = key;
+};
+
 int get_key_i(HeapMin *heap_min, int i){
+    return heap_min->values[i].key;
+};
+
+int get_value_i(HeapMin *heap_min, int i){
     return heap_min->values[i].value;
 };
