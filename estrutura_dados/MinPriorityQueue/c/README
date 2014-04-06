@@ -1,0 +1,2 @@
+Implementação de Fila de Prioridade Mínima, essa nova estrutura de dados utiliza a estrutura de dados HeapMin.
+Para rodar os testes execute make run_tests
