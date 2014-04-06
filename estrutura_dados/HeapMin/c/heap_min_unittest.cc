@@ -100,6 +100,29 @@ TEST(HeapMinTest, BuildMinHeap){
     ASSERT_EQ(0, heap_min.values[9].key);
 }
 
+TEST(HeapMinTest, GetPositionHeap){
+    HeapMin heap_min;
+    allocate_memory(&heap_min, 9);
+    set_value_and_key_i(&heap_min, 1, 1, 0);
+    set_value_and_key_i(&heap_min, 2, 100, 1);
+    set_value_and_key_i(&heap_min, 3, 3, 2);
+    set_value_and_key_i(&heap_min, 4, 2, 3);
+    set_value_and_key_i(&heap_min, 5, 19, 4);
+    set_value_and_key_i(&heap_min, 6, 36, 5);
+    set_value_and_key_i(&heap_min, 7, 7, 6);
+    set_value_and_key_i(&heap_min, 8, 25, 7);
+    set_value_and_key_i(&heap_min, 9, 17, 8);
+    ASSERT_EQ(1, get_position_from_key(&heap_min, 0));
+    //ASSERT_EQ(2, get_position_from_key(&heap_min, 1));
+    //ASSERT_EQ(3, get_position_from_key(&heap_min, 2));
+    //ASSERT_EQ(4, get_position_from_key(&heap_min, 3));
+    //ASSERT_EQ(5, get_position_from_key(&heap_min, 4));
+    //ASSERT_EQ(6, get_position_from_key(&heap_min, 5));
+    //ASSERT_EQ(7, get_position_from_key(&heap_min, 6));
+    //ASSERT_EQ(8, get_position_from_key(&heap_min, 7));
+    //ASSERT_EQ(9, get_position_from_key(&heap_min, 8));
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

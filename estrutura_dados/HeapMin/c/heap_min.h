@@ -23,5 +23,6 @@ void set_value_i(HeapMin *, int, int);
 void set_key_i(HeapMin *, int, int);
 int get_key_i(HeapMin *, int);
 int get_value_i(HeapMin *, int);
+int get_position_from_key(HeapMin *, int);
 #endif
 

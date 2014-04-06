@@ -75,3 +75,13 @@ int get_key_i(HeapMin *heap_min, int i){
 int get_value_i(HeapMin *heap_min, int i){
     return heap_min->values[i].value;
 };
+
+int get_position_from_key(HeapMin *heap_min, int key){
+    int i = 1;
+    while(get_key_i(heap_min, i) != key)
+        if (get_key_i(heap_min, i) < key)
+            i = left(i);
+        else
+            i = right(i);
+    return i;
+};
