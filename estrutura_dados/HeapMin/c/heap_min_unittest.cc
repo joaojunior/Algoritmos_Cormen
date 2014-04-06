@@ -113,14 +113,14 @@ TEST(HeapMinTest, GetPositionHeap){
     set_value_and_key_i(&heap_min, 8, 25, 7);
     set_value_and_key_i(&heap_min, 9, 17, 8);
     ASSERT_EQ(1, get_position_from_key(&heap_min, 0));
-    //ASSERT_EQ(2, get_position_from_key(&heap_min, 1));
-    //ASSERT_EQ(3, get_position_from_key(&heap_min, 2));
-    //ASSERT_EQ(4, get_position_from_key(&heap_min, 3));
-    //ASSERT_EQ(5, get_position_from_key(&heap_min, 4));
-    //ASSERT_EQ(6, get_position_from_key(&heap_min, 5));
-    //ASSERT_EQ(7, get_position_from_key(&heap_min, 6));
-    //ASSERT_EQ(8, get_position_from_key(&heap_min, 7));
-    //ASSERT_EQ(9, get_position_from_key(&heap_min, 8));
+    ASSERT_EQ(2, get_position_from_key(&heap_min, 1));
+    ASSERT_EQ(3, get_position_from_key(&heap_min, 2));
+    ASSERT_EQ(4, get_position_from_key(&heap_min, 3));
+    ASSERT_EQ(5, get_position_from_key(&heap_min, 4));
+    ASSERT_EQ(6, get_position_from_key(&heap_min, 5));
+    ASSERT_EQ(7, get_position_from_key(&heap_min, 6));
+    ASSERT_EQ(8, get_position_from_key(&heap_min, 7));
+    ASSERT_EQ(9, get_position_from_key(&heap_min, 8));
 }
 
 int main(int argc, char **argv) {
