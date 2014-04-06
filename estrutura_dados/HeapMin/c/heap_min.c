@@ -42,3 +42,15 @@ void build_min_heap(HeapMin *heap_min){
     for(int i = lenght(heap_min) / 2; i > 0; i--)
         min_heapify(heap_min, i);
 };
+
+void decrement_lenght(HeapMin *heap_min){
+    heap_min->values[0] -= 1;
+};
+
+void set_key_i(HeapMin *heap_min, int i, int value){
+    heap_min->values[i] = value;
+};
+
+int get_key_i(HeapMin *heap_min, int i){
+    return heap_min->values[i];
+};

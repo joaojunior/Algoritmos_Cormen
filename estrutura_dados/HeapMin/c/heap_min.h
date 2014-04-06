@@ -12,5 +12,8 @@ void allocate_memory(HeapMin *, int);
 int lenght(HeapMin *);
 void min_heapify(HeapMin *, int);
 void build_min_heap(HeapMin *);
+void decrement_lenght(HeapMin *);
+void set_key_i(HeapMin *, int, int);
+int get_key_i(HeapMin *, int);
 #endif
 
