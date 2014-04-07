@@ -7,6 +7,7 @@ typedef struct{
 } Cell;
 typedef struct heap_min{
     Cell *values;
+    int *keys2position;
 } HeapMin;
 
 int parent(int);

@@ -13,6 +13,7 @@ int right(int i){
 
 void allocate_memory(HeapMin *heap_min, int lenght){
     heap_min->values = (Cell *)malloc(sizeof(Cell) * (lenght + 1));
+    heap_min->keys2position = (int *)malloc(sizeof(int) * lenght);
     heap_min->values[0].value = lenght;
 };
 
@@ -42,8 +43,10 @@ void swap(HeapMin *heap_min, int i, int j){
     aux_value = heap_min->values[i].value;
     heap_min->values[i].key = heap_min->values[j].key;
     heap_min->values[i].value = heap_min->values[j].value;
+    heap_min->keys2position[heap_min->values[i].key] = i;
     heap_min->values[j].key = aux_key;
     heap_min->values[j].value = aux_value;
+    heap_min->keys2position[aux_key] = j;
 };
 
 void build_min_heap(HeapMin *heap_min){
@@ -66,6 +69,7 @@ void set_value_i(HeapMin *heap_min, int i, int value){
 
 void set_key_i(HeapMin *heap_min, int i, int key){
     heap_min->values[i].key = key;
+    heap_min->keys2position[key] = i;
 };
 
 int get_key_i(HeapMin *heap_min, int i){
@@ -77,7 +81,5 @@ int get_value_i(HeapMin *heap_min, int i){
 };
 
 int get_position_from_key(HeapMin *heap_min, int key){
-    for(int i = 1; i <= lenght(heap_min); i++)
-        if(get_key_i(heap_min, i) == key)
-            return i;
+    return heap_min->keys2position[key];
 };
