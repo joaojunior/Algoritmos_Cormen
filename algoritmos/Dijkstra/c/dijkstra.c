@@ -3,7 +3,7 @@ DijkstraResult* dijkstra(Graph *graph, int source){
     DijkstraResult* dijkstra_result;
     MinPriorityQueue min_priority_queue;
     int u;
-    dijkstra_result = allocate_memory(graph->numbers_nodes);
+    dijkstra_result = allocate_memory_dijkstra(graph->numbers_nodes);
     allocate_memory(&min_priority_queue, graph->numbers_nodes);
     initialize(dijkstra_result, &min_priority_queue, source, graph->numbers_nodes);
     build_min_heap(&min_priority_queue);
@@ -16,7 +16,7 @@ DijkstraResult* dijkstra(Graph *graph, int source){
     return dijkstra_result;
 }; 
 
-DijkstraResult* allocate_memory(int numbers_nodes){
+DijkstraResult* allocate_memory_dijkstra(int numbers_nodes){
     DijkstraResult* dijkstra_result;
     dijkstra_result = (DijkstraResult*)malloc(sizeof(DijkstraResult));
     dijkstra_result->distance = (int*)malloc(sizeof(int) * numbers_nodes);
