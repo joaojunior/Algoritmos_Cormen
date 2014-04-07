@@ -9,4 +9,7 @@ typedef struct{
 } DijkstraResult;
 
 DijkstraResult* dijkstra(Graph *, int);
+DijkstraResult* allocate_memory(int);
+void initialize(DijkstraResult*, MinPriorityQueue*, int, int);
+void relax(DijkstraResult*, MinPriorityQueue*, Graph*, int, int);
 #endif
