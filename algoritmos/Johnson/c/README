@@ -1,0 +1,2 @@
+Implementação do algoritmo de Johnson. Esse algoritmo utiliza a estrutura de dados Graph e os Algoritmos de BellmanFord e Dijkstra.
+Para rodar os testes execute make run_tests
