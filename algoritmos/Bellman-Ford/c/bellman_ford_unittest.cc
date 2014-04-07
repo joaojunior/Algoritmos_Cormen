@@ -22,6 +22,11 @@ TEST(BFSTest, BellmanFordExampleCormen){
     ASSERT_EQ(7, bellman_ford_result->distance[2]);
     ASSERT_EQ(4, bellman_ford_result->distance[3]);
     ASSERT_EQ(-2, bellman_ford_result->distance[4]);
+    ASSERT_EQ(PREDECESSOR_NULL, bellman_ford_result->predecessor[0]);
+    ASSERT_EQ(3, bellman_ford_result->predecessor[1]);
+    ASSERT_EQ(0, bellman_ford_result->predecessor[2]);
+    ASSERT_EQ(2, bellman_ford_result->predecessor[3]);
+    ASSERT_EQ(1, bellman_ford_result->predecessor[4]);
     ASSERT_FALSE(bellman_ford_result->exist_negative_cycle);
 }
 

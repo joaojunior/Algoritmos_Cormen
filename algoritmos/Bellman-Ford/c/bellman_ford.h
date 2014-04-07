@@ -1,9 +1,11 @@
 #ifndef BELLMAN_FORD_H
 #define BELLMAN_FORD_H
+#define PREDECESSOR_NULL -1
 #include <stdlib.h>
 #include "../../../estrutura_dados/grafo_matriz_adjacencia/c/graph.h" 
 typedef struct bell{
     int *distance;
+    int *predecessor;
     bool exist_negative_cycle;
 } BellmanFordResult;
 

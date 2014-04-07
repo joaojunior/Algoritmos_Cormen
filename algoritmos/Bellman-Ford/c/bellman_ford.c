@@ -15,19 +15,24 @@ BellmanFordResult *allocate_memory(int numbers_nodes){
     BellmanFordResult *bellman_ford_result;
     bellman_ford_result = (BellmanFordResult *)malloc(sizeof(BellmanFordResult));
     bellman_ford_result->distance = (int *)malloc(sizeof(int) * numbers_nodes);
+    bellman_ford_result->predecessor = (int *)malloc(sizeof(int) * numbers_nodes);
     return bellman_ford_result;
 };
 
 void initialize(BellmanFordResult *bellman_ford_result, int numbers_nodes, int source){
-    for(int i = 0; i < numbers_nodes; i++)
+    for(int i = 0; i < numbers_nodes; i++){
         bellman_ford_result->distance[i] = MAX_WEIGHT;
+        bellman_ford_result->predecessor[i] = PREDECESSOR_NULL;
+    }
     bellman_ford_result->distance[source] = 0;
     bellman_ford_result->exist_negative_cycle = false;
 };
 
 void relax(BellmanFordResult *bellman_ford_result, Graph *graph, int i, int j){
-    if(exist_arc(graph, i, j) and bellman_ford_result->distance[j] > bellman_ford_result->distance[i] + get_cost_edge(graph, i, j))
+    if(exist_arc(graph, i, j) and bellman_ford_result->distance[j] > bellman_ford_result->distance[i] + get_cost_edge(graph, i, j)){
         bellman_ford_result->distance[j] = bellman_ford_result->distance[i] + get_cost_edge(graph, i, j);
+        bellman_ford_result->predecessor[j] = i;
+    }
 };
 
 void verify_negative_cycle(BellmanFordResult *bellman_ford_result, Graph *graph){
