@@ -11,7 +11,6 @@ DijkstraResult* dijkstra(Graph *graph, int source){
         u = extract_minimum(&min_priority_queue);
         for(int v = 0; v < graph->numbers_nodes; v++)
             relax(dijkstra_result, &min_priority_queue, graph, u, v);
-        
     }
     return dijkstra_result;
 }; 
@@ -31,7 +30,7 @@ void initialize(DijkstraResult* dijkstra_result, MinPriorityQueue* min_priority_
         set_value_and_key_i(min_priority_queue, i+1, MAX_WEIGHT, i);
     };
     dijkstra_result->distance[source] = 0;
-    set_value_and_key_i(min_priority_queue, 1, 0, source);
+    set_value_and_key_i(min_priority_queue, source+1, 0, source);
 };
 
 void relax(DijkstraResult* dijkstra_result, MinPriorityQueue* min_priority_queue, Graph* graph, int u, int v){
