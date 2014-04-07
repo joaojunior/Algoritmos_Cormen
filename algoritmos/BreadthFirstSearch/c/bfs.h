@@ -10,7 +10,7 @@
 
 typedef struct{
     int *distance;
-    int *before;
+    int *predecessor;
 }BFSResult;
 
 BFSResult *bfs(Graph *, int);

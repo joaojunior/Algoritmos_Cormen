@@ -15,10 +15,10 @@ TEST(BFSTest, Distance){
     ASSERT_EQ(1, bfs_result->distance[1]);
     ASSERT_EQ(1, bfs_result->distance[2]);
     ASSERT_EQ(2, bfs_result->distance[3]);
-    ASSERT_EQ(NULL, bfs_result->before[0]);
-    ASSERT_EQ(0, bfs_result->before[1]);
-    ASSERT_EQ(0, bfs_result->before[2]);
-    ASSERT_EQ(2, bfs_result->before[3]);
+    ASSERT_EQ(NULL, bfs_result->predecessor[0]);
+    ASSERT_EQ(0, bfs_result->predecessor[1]);
+    ASSERT_EQ(0, bfs_result->predecessor[2]);
+    ASSERT_EQ(2, bfs_result->predecessor[3]);
 }
 
 TEST(BFSTest, BfsExampleCormen){
@@ -45,14 +45,14 @@ TEST(BFSTest, BfsExampleCormen){
     ASSERT_EQ(2, bfs_result->distance[5]);
     ASSERT_EQ(3, bfs_result->distance[6]);
     ASSERT_EQ(3, bfs_result->distance[7]);
-    ASSERT_EQ(2, bfs_result->before[0]);
-    ASSERT_EQ(0, bfs_result->before[1]);
-    ASSERT_EQ(NULL, bfs_result->before[2]);
-    ASSERT_EQ(2, bfs_result->before[3]);
-    ASSERT_EQ(3, bfs_result->before[4]);
-    ASSERT_EQ(3, bfs_result->before[5]);
-    ASSERT_EQ(4, bfs_result->before[6]);
-    ASSERT_EQ(5, bfs_result->before[7]);
+    ASSERT_EQ(2, bfs_result->predecessor[0]);
+    ASSERT_EQ(0, bfs_result->predecessor[1]);
+    ASSERT_EQ(NULL, bfs_result->predecessor[2]);
+    ASSERT_EQ(2, bfs_result->predecessor[3]);
+    ASSERT_EQ(3, bfs_result->predecessor[4]);
+    ASSERT_EQ(3, bfs_result->predecessor[5]);
+    ASSERT_EQ(4, bfs_result->predecessor[6]);
+    ASSERT_EQ(5, bfs_result->predecessor[7]);
 }
 
 int main(int argc, char **argv) {
