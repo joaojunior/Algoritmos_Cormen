@@ -22,7 +22,7 @@ TEST(DijkstraTest, ExampleCormen){
     ASSERT_EQ(5, dijkstra_result->distance[2]);
     ASSERT_EQ(9, dijkstra_result->distance[3]);
     ASSERT_EQ(7, dijkstra_result->distance[4]);
-    ASSERT_EQ(NULL, dijkstra_result->predecessor[0]);
+    ASSERT_EQ(PREDECESSOR_NULL, dijkstra_result->predecessor[0]);
     ASSERT_EQ(2, dijkstra_result->predecessor[1]);
     ASSERT_EQ(0, dijkstra_result->predecessor[2]);
     ASSERT_EQ(1, dijkstra_result->predecessor[3]);
@@ -49,7 +49,7 @@ TEST(DijkstraTest, ExampleCormen1){
     ASSERT_EQ(0, dijkstra_result->distance[3]);
     ASSERT_EQ(2, dijkstra_result->distance[4]);
     ASSERT_EQ(3, dijkstra_result->predecessor[0]);
-    ASSERT_EQ(NULL, dijkstra_result->predecessor[1]);
+    ASSERT_EQ(PREDECESSOR_NULL, dijkstra_result->predecessor[1]);
     ASSERT_EQ(3, dijkstra_result->predecessor[2]);
     ASSERT_EQ(1, dijkstra_result->predecessor[3]);
     ASSERT_EQ(0, dijkstra_result->predecessor[4]);

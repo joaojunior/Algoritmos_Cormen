@@ -26,7 +26,7 @@ DijkstraResult* allocate_memory_dijkstra(int numbers_nodes){
 void initialize(DijkstraResult* dijkstra_result, MinPriorityQueue* min_priority_queue, int source, int numbers_nodes){
     for(int i = 0; i < numbers_nodes; i++){
         dijkstra_result->distance[i] = MAX_WEIGHT;
-        dijkstra_result->predecessor[i] = NULL;
+        dijkstra_result->predecessor[i] = PREDECESSOR_NULL;
         set_value_and_key_i(min_priority_queue, i+1, MAX_WEIGHT, i);
     };
     dijkstra_result->distance[source] = 0;

@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "../../../estrutura_dados/grafo_matriz_adjacencia/c/graph.h"
 #include "../../../estrutura_dados/MinPriorityQueue/c/min_priority_queue.h"
+#define PREDECESSOR_NULL -1
 typedef struct{
     int *distance;
     int *predecessor;
