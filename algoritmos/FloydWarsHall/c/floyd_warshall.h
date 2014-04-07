@@ -4,8 +4,14 @@
 #define FLOYD_WARSHALL_H
 #include "../../../estrutura_dados/grafo_matriz_adjacencia/c/graph.h"
 #include "../../../estrutura_dados/fila/c/fila.h"
-
-Graph *floyd_warshall(Graph *);
+#define PREDECESSOR_NULL -1
+typedef struct{
+    int **distance;
+    int **predecessor;
+} ResultFloydWarshall;
+ResultFloydWarshall *floyd_warshall(Graph *);
+ResultFloydWarshall *allocate_memory(int);
+void initialize(ResultFloydWarshall *, Graph *);
 #endif
 
 
