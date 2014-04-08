@@ -6,7 +6,8 @@ ResultFloydWarshall *floyd_warshall(Graph *graph){
     for(int k = 0; k < graph->numbers_nodes; k++)
         for(int i = 0; i < graph->numbers_nodes; i++)
             for(int j = 0; j < graph->numbers_nodes; j++)
-                if(result_floyd_warshall->distance[i][j] > result_floyd_warshall->distance[i][k] + result_floyd_warshall->distance[k][j]){
+                if(result_floyd_warshall->distance[i][j] > result_floyd_warshall->distance[i][k] + result_floyd_warshall->distance[k][j]
+                and result_floyd_warshall->distance[i][k] != MAX_WEIGHT and result_floyd_warshall->distance[k][j] != MAX_WEIGHT){
                     result_floyd_warshall->distance[i][j] = result_floyd_warshall->distance[i][k] + result_floyd_warshall->distance[k][j];
                     result_floyd_warshall->predecessor[i][j] = result_floyd_warshall->predecessor[k][j];
                 }
