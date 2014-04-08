@@ -3,7 +3,6 @@
 #ifndef REPEATED_SQUARING_H
 #define REPEATED_SQUARING_H
 #include "../../../estrutura_dados/grafo_matriz_adjacencia/c/graph.h"
-#include "../../../estrutura_dados/fila/c/fila.h"
 #define PREDECESSOR_NULL -1
 typedef struct{
     int **distance;
