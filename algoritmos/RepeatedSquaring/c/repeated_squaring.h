@@ -4,9 +4,16 @@
 #define REPEATED_SQUARING_H
 #include "../../../estrutura_dados/grafo_matriz_adjacencia/c/graph.h"
 #include "../../../estrutura_dados/fila/c/fila.h"
-
-Graph *repeated_squaring(Graph *);
-Graph *extend(Graph *, Graph *);
+#define PREDECESSOR_NULL -1
+typedef struct{
+    int **distance;
+    int **predecessor;
+}RepeatedSquaringResult;
+RepeatedSquaringResult *repeated_squaring(Graph *);
+RepeatedSquaringResult *allocate_memory(int);
+void initialize(RepeatedSquaringResult *, Graph *);
+RepeatedSquaringResult *extend(RepeatedSquaringResult *, RepeatedSquaringResult *, int);
+void calculate_predecessor(RepeatedSquaringResult *, Graph *);
 #endif
 
 
