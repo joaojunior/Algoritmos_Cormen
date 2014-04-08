@@ -33,3 +33,14 @@ bool exist_arc(Graph *graph, int source, int dest){
         result = true;
     return result;
 };
+
+void remove_arc(Graph *graph, int source, int dest){
+    graph->numbers_edges -= 1;
+    graph->edges[source][dest] = MAX_WEIGHT;
+};
+
+void remove_edge(Graph *graph, int source, int dest){
+    graph->numbers_edges -= 1;
+    graph->edges[source][dest] = MAX_WEIGHT;
+    graph->edges[dest][source] = MAX_WEIGHT;
+};

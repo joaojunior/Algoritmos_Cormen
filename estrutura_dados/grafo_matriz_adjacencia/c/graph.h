@@ -16,4 +16,6 @@ void insert_edge(Graph *, int, int, int);
 void insert_arc(Graph *, int, int, int);
 int get_cost_edge(Graph *, int, int);
 bool exist_arc(Graph *, int, int);
+void remove_arc(Graph *, int, int);
+void remove_edge(Graph *, int, int);
 #endif

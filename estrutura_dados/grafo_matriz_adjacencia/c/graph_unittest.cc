@@ -67,6 +67,30 @@ TEST(GraphTest, ExistArc){
     ASSERT_TRUE(exist_arc(&graph, 1, 0));
 }
 
+TEST(GraphTest, RemoveArc){
+    Graph graph;
+    graph.numbers_nodes = 2;
+    allocate_memory(&graph);
+    insert_arc(&graph, 1, 0, 10);
+    ASSERT_TRUE(exist_arc(&graph, 1, 0));
+    ASSERT_EQ(1, graph.numbers_edges);
+    remove_arc(&graph, 1, 0);
+    ASSERT_FALSE(exist_arc(&graph, 1, 0));
+    ASSERT_EQ(0, graph.numbers_edges);
+}
+
+TEST(GraphTest, RemoveEdge){
+    Graph graph;
+    graph.numbers_nodes = 2;
+    allocate_memory(&graph);
+    insert_edge(&graph, 1, 0, 10);
+    ASSERT_TRUE(exist_arc(&graph, 1, 0));
+    ASSERT_EQ(1, graph.numbers_edges);
+    remove_edge(&graph, 1, 0);
+    ASSERT_FALSE(exist_arc(&graph, 1, 0));
+    ASSERT_EQ(0, graph.numbers_edges);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
