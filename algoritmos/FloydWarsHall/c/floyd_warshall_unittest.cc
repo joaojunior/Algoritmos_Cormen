@@ -1,7 +1,7 @@
 #include "floyd_warshall.h"
 #include <gtest/gtest.h>
 
-TEST(RepeatedSquaringTest, ExampleCormen){
+TEST(FloydWarshallTest, ExampleCormen){
     Graph graph;
     ResultFloydWarshall *graph_result;
     graph.numbers_nodes = 5;
@@ -68,7 +68,7 @@ TEST(RepeatedSquaringTest, ExampleCormen){
     ASSERT_EQ(PREDECESSOR_NULL, graph_result->predecessor[4][4]);
 }
 
-TEST(RepeatedSquaringTest, Example2){
+TEST(FloydWarshallTest, Example2){
     Graph graph;
     ResultFloydWarshall *graph_result;
     graph.numbers_nodes = 5;
@@ -110,7 +110,7 @@ TEST(RepeatedSquaringTest, Example2){
     ASSERT_EQ(0, graph_result->distance[4][4]);
 }
 
-TEST(RepeatedSquaringTest, VerifyDistanceAndPredecessorAfterRemoveArc){
+TEST(FloydWarshallTestTest, VerifyDistanceAndPredecessorAfterRemoveArc){
     Graph graph;
     ResultFloydWarshall *graph_result;
     graph.numbers_nodes = 5;

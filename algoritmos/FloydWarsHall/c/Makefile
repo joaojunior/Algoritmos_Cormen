@@ -76,9 +76,6 @@ gtest_main.a : gtest-all.o gtest_main.o
 # gtest_main.a, depending on whether it defines its own main()
 # function.
 
-fila.o : $(DATA_STRUCTURE_DIR)/fila/c/fila.c $(DATA_STRUCTURE_DIR)/fila/c/fila.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(DATA_STRUCTURE_DIR)/fila/c/fila.c
-
 graph.o : $(DATA_STRUCTURE_DIR)/grafo_matriz_adjacencia/c/graph.c $(DATA_STRUCTURE_DIR)/grafo_matriz_adjacencia/c/graph.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(DATA_STRUCTURE_DIR)/grafo_matriz_adjacencia/c/graph.c
 
@@ -89,5 +86,5 @@ floyd_warshall_unittest.o : $(USER_DIR)/floyd_warshall_unittest.cc \
                      $(USER_DIR)/floyd_warshall.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/floyd_warshall_unittest.cc
 
-floyd_warshall_unittest : fila.o graph.o floyd_warshall.o floyd_warshall_unittest.o gtest_main.a
+floyd_warshall_unittest : graph.o floyd_warshall.o floyd_warshall_unittest.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
