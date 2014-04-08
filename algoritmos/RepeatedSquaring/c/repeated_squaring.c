@@ -59,7 +59,7 @@ void calculate_predecessor(RepeatedSquaringResult *result, Graph *graph){
         for(int j = 0; j < graph->numbers_nodes; j++)
             if(i != j){
                 for(int k = 0; k < graph->numbers_nodes; k++)
-                    if(result->distance[i][j] == result->distance[i][k] + get_cost_edge(graph, k, j))
+                    if(exist_arc(graph, k, j) and result->distance[i][j] == result->distance[i][k] + get_cost_edge(graph, k, j))
                         result->predecessor[i][j] = k;
             }
 };

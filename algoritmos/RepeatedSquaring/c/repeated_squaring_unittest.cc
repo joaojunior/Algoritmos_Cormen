@@ -109,6 +109,66 @@ TEST(RepeatedSquaringTest, Example2){
     ASSERT_EQ(1, graph_result->distance[4][3]);
     ASSERT_EQ(0, graph_result->distance[4][4]);
 }
+
+TEST(RepeatedSquaringTest, VerifyPredecessor){
+    Graph graph;
+    RepeatedSquaringResult *repeated_squaring_result;
+    int **quantity_shortest_path_in_edge;
+    graph.numbers_nodes = 4;
+    allocate_memory(&graph);
+    insert_edge(&graph, 0, 1, 1);
+    insert_edge(&graph, 0, 2, 1);
+    insert_edge(&graph, 0, 2, 1);
+    insert_edge(&graph, 1, 2, 1);
+    insert_edge(&graph, 2, 3, 1);
+    repeated_squaring_result = repeated_squaring(&graph);
+    ASSERT_EQ(PREDECESSOR_NULL,repeated_squaring_result->predecessor[0][0]);
+    ASSERT_EQ(0,repeated_squaring_result->predecessor[0][1]);
+    ASSERT_EQ(0,repeated_squaring_result->predecessor[0][2]);
+    ASSERT_EQ(2,repeated_squaring_result->predecessor[0][3]);
+    ASSERT_EQ(1,repeated_squaring_result->predecessor[1][0]);
+    ASSERT_EQ(PREDECESSOR_NULL,repeated_squaring_result->predecessor[1][1]);
+    ASSERT_EQ(1,repeated_squaring_result->predecessor[1][2]);
+    ASSERT_EQ(2,repeated_squaring_result->predecessor[1][3]);
+    ASSERT_EQ(2,repeated_squaring_result->predecessor[2][0]);
+    ASSERT_EQ(2,repeated_squaring_result->predecessor[2][1]);
+    ASSERT_EQ(PREDECESSOR_NULL,repeated_squaring_result->predecessor[2][2]);
+    ASSERT_EQ(2,repeated_squaring_result->predecessor[2][3]);
+    ASSERT_EQ(2,repeated_squaring_result->predecessor[3][0]);
+    ASSERT_EQ(2,repeated_squaring_result->predecessor[3][1]);
+    ASSERT_EQ(3,repeated_squaring_result->predecessor[3][2]);
+    ASSERT_EQ(PREDECESSOR_NULL,repeated_squaring_result->predecessor[3][3]);
+}
+
+TEST(RepeatedSquaringTest, VerifyPredecessorWithGraphNotConnected){
+    Graph graph;
+    RepeatedSquaringResult *repeated_squaring_result;
+    int **quantity_shortest_path_in_edge;
+    graph.numbers_nodes = 4;
+    allocate_memory(&graph);
+    insert_edge(&graph, 0, 1, 1);
+    insert_edge(&graph, 0, 2, 1);
+    insert_edge(&graph, 0, 2, 1);
+    insert_edge(&graph, 1, 2, 1);
+    repeated_squaring_result = repeated_squaring(&graph);
+    ASSERT_EQ(PREDECESSOR_NULL,repeated_squaring_result->predecessor[0][0]);
+    ASSERT_EQ(0,repeated_squaring_result->predecessor[0][1]);
+    ASSERT_EQ(0,repeated_squaring_result->predecessor[0][2]);
+    ASSERT_EQ(PREDECESSOR_NULL,repeated_squaring_result->predecessor[0][3]);
+    ASSERT_EQ(1,repeated_squaring_result->predecessor[1][0]);
+    ASSERT_EQ(PREDECESSOR_NULL,repeated_squaring_result->predecessor[1][1]);
+    ASSERT_EQ(1,repeated_squaring_result->predecessor[1][2]);
+    ASSERT_EQ(PREDECESSOR_NULL,repeated_squaring_result->predecessor[1][3]);
+    ASSERT_EQ(2,repeated_squaring_result->predecessor[2][0]);
+    ASSERT_EQ(2,repeated_squaring_result->predecessor[2][1]);
+    ASSERT_EQ(PREDECESSOR_NULL,repeated_squaring_result->predecessor[2][2]);
+    ASSERT_EQ(PREDECESSOR_NULL,repeated_squaring_result->predecessor[2][3]);
+    ASSERT_EQ(PREDECESSOR_NULL,repeated_squaring_result->predecessor[3][0]);
+    ASSERT_EQ(PREDECESSOR_NULL,repeated_squaring_result->predecessor[3][1]);
+    ASSERT_EQ(PREDECESSOR_NULL,repeated_squaring_result->predecessor[3][2]);
+    ASSERT_EQ(PREDECESSOR_NULL,repeated_squaring_result->predecessor[3][3]);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
