@@ -5,16 +5,20 @@ JohnsonResult* jonhson(Graph *graph){
     DijkstraResult* dijkstra_result;
     jonhson_result = (JohnsonResult *)malloc(sizeof(JohnsonResult));
     jonhson_result->distance = (int **)malloc(graph->numbers_nodes * sizeof(int *));
+    jonhson_result->predecessor = (int **)malloc(graph->numbers_nodes * sizeof(int *));
     for(int i = 0; i < graph->numbers_nodes; i++){
         jonhson_result->distance[i] = (int *)malloc(graph->numbers_nodes * sizeof(int));
+        jonhson_result->predecessor[i] = (int *)malloc(graph->numbers_nodes * sizeof(int));
         for(int j = 0; j < graph->numbers_nodes; j++)
                 jonhson_result->distance[i][j] = 0;
     }
     bellman_ford_result = reconsider_graph(graph);
     for(int i = 0; i < graph->numbers_nodes; i++){
         dijkstra_result = dijkstra(graph, i);
-        for(int j = 0; j < graph->numbers_nodes; j++)
+        for(int j = 0; j < graph->numbers_nodes; j++){
             jonhson_result->distance[i][j] = dijkstra_result->distance[j] + bellman_ford_result->distance[j] - bellman_ford_result->distance[i];
+            jonhson_result->predecessor[i][j] = dijkstra_result->predecessor[j];
+        }
     }
     return jonhson_result;
 };

@@ -1,6 +1,6 @@
 #include "johnson.h"
 #include <gtest/gtest.h>
-TEST(DijkstraTest, GraphReconsidered){
+TEST(JonhsonTest, GraphReconsidered){
     Graph graph;
     BellmanFordResult *bellman_ford_result;
     graph.numbers_nodes = 5;
@@ -31,7 +31,7 @@ TEST(DijkstraTest, GraphReconsidered){
     ASSERT_EQ(-4, bellman_ford_result->distance[4]);
 }
 
-TEST(DijkstraTest, ExampleCormen){
+TEST(JonhsonTest, ExampleCormen){
     Graph graph;
     JohnsonResult *jonhson_result;
     graph.numbers_nodes = 5;
@@ -71,6 +71,31 @@ TEST(DijkstraTest, ExampleCormen){
     ASSERT_EQ(1, jonhson_result->distance[4][2]);
     ASSERT_EQ(6, jonhson_result->distance[4][3]);
     ASSERT_EQ(0, jonhson_result->distance[4][4]);
+    ASSERT_EQ(PREDECESSOR_NULL, jonhson_result->predecessor[0][0]);
+    ASSERT_EQ(2, jonhson_result->predecessor[0][1]);
+    ASSERT_EQ(3, jonhson_result->predecessor[0][2]);
+    ASSERT_EQ(4, jonhson_result->predecessor[0][3]);
+    ASSERT_EQ(0, jonhson_result->predecessor[0][4]);
+    ASSERT_EQ(3, jonhson_result->predecessor[1][0]);
+    ASSERT_EQ(PREDECESSOR_NULL, jonhson_result->predecessor[1][1]);
+    ASSERT_EQ(3, jonhson_result->predecessor[1][2]);
+    ASSERT_EQ(1, jonhson_result->predecessor[1][3]);
+    ASSERT_EQ(0, jonhson_result->predecessor[1][4]);
+    ASSERT_EQ(3, jonhson_result->predecessor[2][0]);
+    ASSERT_EQ(2, jonhson_result->predecessor[2][1]);
+    ASSERT_EQ(PREDECESSOR_NULL, jonhson_result->predecessor[2][2]);
+    ASSERT_EQ(1, jonhson_result->predecessor[2][3]);
+    ASSERT_EQ(0, jonhson_result->predecessor[2][4]);
+    ASSERT_EQ(3, jonhson_result->predecessor[3][0]);
+    ASSERT_EQ(2, jonhson_result->predecessor[3][1]);
+    ASSERT_EQ(3, jonhson_result->predecessor[3][2]);
+    ASSERT_EQ(PREDECESSOR_NULL, jonhson_result->predecessor[3][3]);
+    ASSERT_EQ(0, jonhson_result->predecessor[3][4]);
+    ASSERT_EQ(3, jonhson_result->predecessor[4][0]);
+    ASSERT_EQ(2, jonhson_result->predecessor[4][1]);
+    ASSERT_EQ(3, jonhson_result->predecessor[4][2]);
+    ASSERT_EQ(4, jonhson_result->predecessor[4][3]);
+    ASSERT_EQ(PREDECESSOR_NULL, jonhson_result->predecessor[4][4]);
 }
 
 int main(int argc, char **argv) {
