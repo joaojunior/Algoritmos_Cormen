@@ -45,7 +45,7 @@ RepeatedSquaringResult *extend(RepeatedSquaringResult *L, RepeatedSquaringResult
         for(int j = 0; j < numbers_nodes; j++){
             l = MAX_WEIGHT;
             for(int k = 0; k < numbers_nodes; k++){
-                if(L->distance[i][k] + W->distance[k][j] < l)
+                if(L->distance[i][k] + W->distance[k][j] < l and L->distance[i][k] != MAX_WEIGHT and W->distance[k][j] != MAX_WEIGHT)
                     l = L->distance[i][k] + W->distance[k][j];
             }
             L->distance[i][j] = l;
