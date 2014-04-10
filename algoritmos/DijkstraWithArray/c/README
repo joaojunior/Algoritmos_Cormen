@@ -1,0 +1,2 @@
+Implementação do algoritmo de Dijkstra com um vetor para representar os nós que ainda precisam ser visitados. Esse algoritmo utiliza as estruturas de dados Graph.
+Para rodar os testes execute make run_tests
