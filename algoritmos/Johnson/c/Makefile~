@@ -89,8 +89,8 @@ min_priority_queue.o : $(DATA_STRUCTURE_DIR)/MinPriorityQueue/c/min_priority_que
 bellman_ford.o : $(ALGORITHM_DIR)/Bellman-Ford/c/bellman_ford.c $(ALGORITHM_DIR)/Bellman-Ford/c/bellman_ford.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(ALGORITHM_DIR)/Bellman-Ford/c/bellman_ford.c
 
-dijkstra.o : $(ALGORITHM_DIR)/DijkstraWithMinPriorityQueue/c/dijkstra.c $(ALGORITHM_DIR)/DijkstraWithMinPriorityQueue/c/dijkstra.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(ALGORITHM_DIR)/DijkstraWithMinPriorityQueue/c/dijkstra.c
+dijkstra.o : $(ALGORITHM_DIR)/Dijkstra/c/dijkstra.c $(ALGORITHM_DIR)/Dijkstra/c/dijkstra.h $(GTEST_HEADERS)
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(ALGORITHM_DIR)/Dijkstra/c/dijkstra.c
 
 johnson.o : $(USER_DIR)/johnson.c $(USER_DIR)/johnson.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/johnson.c
