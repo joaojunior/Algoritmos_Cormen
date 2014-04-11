@@ -1,2 +1,0 @@
-Implementação do algoritmo de Dijkstra. Esse algoritmo utiliza as estruturas de dados Graph e MinPriorityQueue.
-Para rodar os testes execute make run_tests
