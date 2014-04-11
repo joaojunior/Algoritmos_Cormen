@@ -79,12 +79,6 @@ gtest_main.a : gtest-all.o gtest_main.o
 graph.o : $(DATA_STRUCTURE_DIR)/grafo_matriz_adjacencia/c/graph.c $(DATA_STRUCTURE_DIR)/grafo_matriz_adjacencia/c/graph.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(DATA_STRUCTURE_DIR)/grafo_matriz_adjacencia/c/graph.c
 
-heap_min.o : $(DATA_STRUCTURE_DIR)/HeapMin/c/heap_min.c $(DATA_STRUCTURE_DIR)/HeapMin/c/heap_min.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(DATA_STRUCTURE_DIR)/HeapMin/c/heap_min.c
-	
-min_priority_queue.o : $(DATA_STRUCTURE_DIR)/MinPriorityQueue/c/min_priority_queue.c $(DATA_STRUCTURE_DIR)/MinPriorityQueue/c/min_priority_queue.h $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(DATA_STRUCTURE_DIR)/MinPriorityQueue/c/min_priority_queue.c
-
 dijkstra.o : $(USER_DIR)/dijkstra.c $(USER_DIR)/dijkstra.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/dijkstra.c
 	
@@ -92,5 +86,5 @@ dijkstra_unittest.o : $(USER_DIR)/dijkstra_unittest.cc \
                      $(USER_DIR)/dijkstra.h $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/dijkstra_unittest.cc
 
-dijkstra_unittest : graph.o heap_min.o min_priority_queue.o dijkstra.o dijkstra_unittest.o gtest_main.a
+dijkstra_unittest : graph.o dijkstra.o dijkstra_unittest.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -lpthread $^ -o $@
